@@ -38,31 +38,18 @@
         android:layout_height="fill_parent">
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnStart"
             android:src="@drawable/sleep"
+            android:background="@drawable/round_button"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/btnStart"
             android:layout_gravity="center" />
 
-        <RelativeLayout
-            android:layout_width="181dp"
-            android:layout_height="181dp"
-            android:layout_gravity="right|top">
-
-            <ImageView
-                android:layout_width="181dp"
-                android:layout_height="181dp"
-                android:gravity="center"
-                android:src="@drawable/speech_bubble"
-                android:layout_gravity="right"
-                android:layout_alignParentTop="true"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/imageView" />
 
             <TextView
-                android:layout_width="181dp"
-                android:layout_height="181dp"
+                android:background="@drawable/speech_bubble"
+                android:layout_width="183dp"
+                android:layout_height="184dp"
                 android:text="@string/welcome_speech_bubble_text"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:gravity="center"
@@ -71,7 +58,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:id="@+id/textView" />
-        </RelativeLayout>
 
     </FrameLayout>
 
