@@ -49,25 +49,28 @@ public final class R {
         public static final int drawer_shadow=0x7f02000d;
         public static final int ic_drawer=0x7f02000e;
         public static final int sleep=0x7f02000f;
+        public static final int speech_bubble=0x7f020010;
     }
     public static final class id {
-        public static final int action_delete=0x7f0a0010;
-        public static final int action_websearch=0x7f0a000e;
+        public static final int action_delete=0x7f0a0012;
+        public static final int action_websearch=0x7f0a0010;
         public static final int bac=0x7f0a0006;
         public static final int btnStart=0x7f0a000d;
-        public static final int btnSync=0x7f0a000c;
         public static final int content_frame=0x7f0a0001;
         public static final int drawer_layout=0x7f0a0000;
         public static final int drinks=0x7f0a0007;
-        public static final int editSleeptime=0x7f0a000b;
         public static final int frame_container=0x7f0a0008;
         public static final int image=0x7f0a0003;
+        public static final int imageView=0x7f0a000e;
         public static final int left_drawer=0x7f0a0002;
         public static final int list_slidermenu=0x7f0a0009;
         public static final int mySimpleXYPlot=0x7f0a000a;
         public static final int name=0x7f0a0004;
-        public static final int restart_menuitem=0x7f0a000f;
+        public static final int restart_menuitem=0x7f0a0011;
         public static final int score=0x7f0a0005;
+        public static final int textView=0x7f0a000f;
+        public static final int welcomeMessage=0x7f0a000b;
+        public static final int welcomeTakeTheTest=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -119,10 +122,14 @@ public final class R {
         public static final int title_name_preference=0x7f080019;
         public static final int title_weight_preference=0x7f08001a;
         public static final int ui_button_start_title=0x7f08001b;
-        public static final int ui_profile_sleep_hint=0x7f08001c;
-        public static final int ui_tabname_history=0x7f08001d;
-        public static final int ui_tabname_settings=0x7f08001e;
-        public static final int ui_tabname_start=0x7f08001f;
+        public static final int ui_button_sync_title=0x7f08001c;
+        public static final int ui_profile_sleep_hint=0x7f08001d;
+        public static final int ui_tabname_history=0x7f08001e;
+        public static final int ui_tabname_settings=0x7f08001f;
+        public static final int ui_tabname_start=0x7f080020;
+        public static final int welcome_part1=0x7f080021;
+        public static final int welcome_part2=0x7f080022;
+        public static final int welcome_speech_bubble_text=0x7f080023;
     }
     public static final class xml {
         public static final int line_point_formatter_with_plf1=0x7f040000;

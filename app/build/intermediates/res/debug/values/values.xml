@@ -60,7 +60,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="restart_menuitem_text">Restart</string>
     <string name="server_addr">http://10.31.215.166:8888</string>
-    <string name="sleep_time">Sleeptime</string>
+    <string name="sleep_time">Welcome to SleepDrunk!</string>
     <string name="summary_gender_list_preference">Select gender</string>
     <string name="summary_height_preference">Your Height (Feet)</string>
     <string name="summary_name_preference">Your Name</string>
@@ -72,8 +72,12 @@
     <string name="title_name_preference">Name</string>
     <string name="title_weight_preference">Weight</string>
     <string name="ui_button_start_title">Play Game Now</string>
+    <string name="ui_button_sync_title">Sync</string>
     <string name="ui_profile_sleep_hint">sleep time(hr) for last 24 hours</string>
     <string name="ui_tabname_history">history</string>
     <string name="ui_tabname_settings">setttings</string>
     <string name="ui_tabname_start">start</string>
+    <string name="welcome_part1">Did you know that being awake for 24 hours straight can lead to the same cognitive impairments as drinking 4-5 alcoholic beverages?</string>
+    <string name="welcome_part2">Take our test and find out how your sleep is currently affecting your reaction time.</string>
+    <string name="welcome_speech_bubble_text">Click me\nto\nPLAY!</string>
 </resources>
