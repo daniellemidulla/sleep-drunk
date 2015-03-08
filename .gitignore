@@ -11,7 +11,9 @@ gen/
 /.idea/libraries
 .DS_Store
 .gradle
+
 build/
+app/build/
 
 local.properties
 
