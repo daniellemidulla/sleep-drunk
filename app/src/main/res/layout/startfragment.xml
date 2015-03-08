@@ -53,7 +53,8 @@
             android:gravity="center"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:id="@+id/welcomePageSpeechBubble" />
 
         <Button
             android:id="@+id/btnSync"
@@ -61,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
 
-            android:text="Sync"
+            android:text="@string/ui_button_sync_title"
             android:layout_gravity="center_horizontal|bottom" />
 
     </FrameLayout>
