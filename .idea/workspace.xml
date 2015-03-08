@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startfragment.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="startfragment.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/startfragment.xml">
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1035">
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.6" vertical-offset="285" max-vertical-offset="1170">
-              <caret line="35" column="44" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.6037152" vertical-offset="285" max-vertical-offset="1170">
+              <caret line="32" column="164" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="164" />
               <folding />
             </state>
           </provider>
@@ -1751,14 +1751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.6" vertical-offset="285" max-vertical-offset="1170">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/round_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
@@ -1790,6 +1782,14 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6037152" vertical-offset="285" max-vertical-offset="1170">
+          <caret line="32" column="164" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="164" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

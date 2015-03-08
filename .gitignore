@@ -6,6 +6,7 @@ bin/
 gen/
 
 .idea
+.idea/*
 .idea/workspace.xml
 /.idea/libraries
 .DS_Store
