@@ -13,6 +13,7 @@
     <string name="additional_based_preferences">Additional settings</string>
 
     <string name="ui_button_start_title">Play Game Now</string>
+    <string name="ui_button_sync_title">Sync</string>
 
 
 
@@ -28,8 +29,11 @@
     <string name="server_addr">http://10.31.246.44:8888</string>
     
     
-    <string name="sleep_time">Sleeptime</string>
+    <string name="sleep_time">Welcome to SleepDrunk!</string>
+    <string name="welcome_part1">Did you know that being awake for 24 hours straight can lead to the same cognitive impairments as drinking 4-5 alcoholic beverages?</string>
+    <string name="welcome_part2">Take our test and find out how your sleep is currently affecting your reaction time.</string>
     <string name="ui_profile_sleep_hint">sleep time(hr) for last 24 hours</string>
+    <string name="welcome_speech_bubble_text">Click me\nto\nPLAY!</string>
     
     <string name="restart_menuitem_text">Restart</string>
 
