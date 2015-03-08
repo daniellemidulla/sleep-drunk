@@ -4,6 +4,7 @@
 
 bin/
 gen/
+app/app.iml
 
 .idea
 .idea/*
@@ -11,6 +12,7 @@ gen/
 /.idea/libraries
 .DS_Store
 .gradle
+gradle/
 
 build/
 app/build/
