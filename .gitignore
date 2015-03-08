@@ -1,5 +1,19 @@
-.idea/*
-.gradle/*
+*.apk
+*.ap_
+*.dex
+
+bin/
+gen/
+
+.idea
+.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+.gradle
+build/
+
+local.properties
+
 
 *.jar
 *.class
