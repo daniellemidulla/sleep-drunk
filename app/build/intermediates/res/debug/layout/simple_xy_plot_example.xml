@@ -29,4 +29,4 @@
             androidPlot.legendWidget.heightMetric.value="50dp"
             androidPlot.legendWidget.positionMetrics.anchor="right_top"
             androidPlot.graphWidget.gridLinePaint.color="#000000"/>
-</LinearLayout><!-- From: file:/Users/xiaohong/Desktop/SleepDrunk3/app/src/main/res/layout/simple_xy_plot_example.xml -->
+</LinearLayout><!-- From: file:/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/src/main/res/layout/simple_xy_plot_example.xml -->
