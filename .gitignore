@@ -17,3 +17,5 @@ local.properties
 proguard/
 
 *.log
+
+.idea/
