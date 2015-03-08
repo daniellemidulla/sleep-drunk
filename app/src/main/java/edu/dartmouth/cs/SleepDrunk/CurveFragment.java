@@ -242,7 +242,12 @@ public class CurveFragment extends Fragment {
 	        	}
 	        	days.add(i++);
 	        }
-	        
+
+        plot.getSeriesSet().clear();
+        plot.removeMarkers();
+
+        plot.clear();
+        plot.redraw();
 	        
 	        plot.setDomainLabel("");
 	        plot.setRangeLabel("ReactTime");

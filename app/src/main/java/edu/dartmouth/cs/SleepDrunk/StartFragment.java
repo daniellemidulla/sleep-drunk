@@ -97,6 +97,7 @@ public class StartFragment extends Fragment {
 						obj.put("score", entry.getScore());
 						obj.put("bac", entry.getBac());
 						obj.put("drinks", entry.getDrinks());
+                        obj.put("sleeptime", entry.getSleeptime());
 					
 						
 						array.put(obj);
