@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/sleep_time" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/editSleeptime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="@string/ui_profile_sleep_hint"
+            android:inputType="phone"
+            android:singleLine="true" >
+        </EditText>
+    
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_weight="0.18"
+        android:orientation="vertical" >
+
+                <Button
+            android:id="@+id/btnSync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnStart"
+            android:layout_margin="5dp"
+            
+            android:text="Sync" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:text="@string/ui_button_start_title" />
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/Users/xiaohong/Desktop/SleepDrunk3/app/src/main/res/layout/startfragment.xml -->

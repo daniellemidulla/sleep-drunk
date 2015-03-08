@@ -21,7 +21,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import edu.dartmouth.cs.SleepDrunk.R;
 import edu.dartmouth.cs.SleepDrunk.ReactHighScoreDatabase.HighScoreEntry;
@@ -30,8 +29,8 @@ public class StartFragment extends Fragment {
 	private Context mContext;
 	private Spinner inputType;
 	private Spinner activityType;
-	private ImageButton btnStart;
-	//private Button btnSync;
+	private Button btnStart;
+	private Button btnSync;
 	private Intent intent;
 	private ReactHighScoreDatabase db;
 	private HighScoreEntry entry;
@@ -47,8 +46,8 @@ public class StartFragment extends Fragment {
 		//activityType = (Spinner) view.findViewById(R.id.spinnerActivityType);
 		//inputType = (Spinner) view.findViewById(R.id.spinnerInputType);
 
-		btnStart = (ImageButton) view.findViewById(R.id.btnStart);
-		//btnSync = (Button) view.findViewById(R.id.btnSync);
+		btnStart = (Button) view.findViewById(R.id.btnStart);
+		btnSync = (Button) view.findViewById(R.id.btnSync);
 		db =  ReactHighScoreDatabase.getDatabase(getActivity());
 
 		
@@ -75,7 +74,7 @@ public class StartFragment extends Fragment {
 
 			}
 		});
-		/*btnSync.setOnClickListener(new View.OnClickListener() {
+		btnSync.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 											
 				List<HighScoreEntry>entries = db.getAllEntries();
@@ -97,6 +96,7 @@ public class StartFragment extends Fragment {
 						obj.put("score", entry.getScore());
 						obj.put("bac", entry.getBac());
 						obj.put("drinks", entry.getDrinks());
+                        obj.put("sleeptime", entry.getSleeptime());
 					
 						
 						array.put(obj);
@@ -110,7 +110,7 @@ public class StartFragment extends Fragment {
 				syncExercise(out);		
 
 			}
-		});*/
+		});
 	   return view;	
 	}
 	

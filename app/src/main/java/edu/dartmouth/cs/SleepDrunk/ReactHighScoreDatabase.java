@@ -29,7 +29,7 @@ public class ReactHighScoreDatabase {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			db.execSQL("CREATE TABLE " + TABLE_NAME + " (" + "_id INTEGER PRIMARY KEY autoincrement," + "name TEXT NOT NULL,"
-					+ "score INTEGER NOT NULL, bac real,drinks real" + ");");
+					+ "score INTEGER NOT NULL, bac real,drinks real,sleeptime real" + ");");
 		}
 
 		@Override
@@ -48,6 +48,7 @@ public class ReactHighScoreDatabase {
 		public  int score;
 		public double bac;
 		public double drinks;
+        public double sleeptime;
 		
 		public int getId() {
 			return id;
@@ -88,6 +89,13 @@ public class ReactHighScoreDatabase {
 		public void setDrinks(double drinks) {
 			this.drinks = drinks;
 		}
+        public double getSleeptime() {
+            return sleeptime;
+        }
+
+        public void setSleeptime(double sleeptime) {
+            this.sleeptime = sleeptime;
+        }
 		
 	}
 
@@ -112,6 +120,7 @@ public class ReactHighScoreDatabase {
 		values.put("score", entry.getScore());
 		values.put("bac", entry.getBac());
 		values.put("drinks", entry.getDrinks());
+        values.put("sleeptime", entry.getSleeptime());
 
 		SQLiteDatabase db = databaseHelper.getWritableDatabase();
 		try {
@@ -144,7 +153,7 @@ public class ReactHighScoreDatabase {
 		SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
 		Cursor cursor = db.query(TABLE_NAME,
-				new String[]{"_id","name","score","bac","drinks"},"_id = " + _id, null, null,
+				new String[]{"_id","name","score","bac","drinks","sleeptime"},"_id = " + _id, null, null,
 				null, null);
 
 		cursor.moveToFirst();
@@ -154,6 +163,7 @@ public class ReactHighScoreDatabase {
 			entry.setScore(cursor.getInt(2));
 			entry.setBac(cursor.getDouble(3));
 			entry.setDrinks(cursor.getDouble(4));
+            entry.setSleeptime(cursor.getDouble(5));
 			cursor.moveToNext();
 		}
 		// Make sure to close the cursor
@@ -167,7 +177,7 @@ public class ReactHighScoreDatabase {
 		//HighScoreEntry entry = new HighScoreEntry();
 
 		Cursor cursor = db.query(TABLE_NAME,
-				new String[]{"_id","name","score","bac","drinks"}, null, null, null, null, null);
+				new String[]{"_id","name","score","bac","drinks","sleeptime"}, null, null, null, null, null);
 
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
@@ -177,6 +187,7 @@ public class ReactHighScoreDatabase {
 			entry.setScore(cursor.getInt(2));
 			entry.setBac(cursor.getDouble(3));
 			entry.setDrinks(cursor.getDouble(4));
+            entry.setSleeptime(cursor.getDouble(5));
 			entries.add(entry);
 			cursor.moveToNext();
 		}
@@ -186,66 +197,5 @@ public class ReactHighScoreDatabase {
 	}
 	
 	
-	public int getPositionForScore(int score) {
-		SQLiteDatabase db = databaseHelper.getReadableDatabase();
-		try {
-			Cursor c = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE score <= " + score, null);
-			try {
-				c.moveToFirst();
-				return c.getInt(0) + 1;
-			} finally {
-				c.close();
-			}
-		} finally {
-			db.close();
-		}
-	}
 
-	public List<HighScoreEntry> getSortedHighScores() {
-		List<HighScoreEntry> result = new ArrayList<HighScoreEntry>();
-
-		SQLiteDatabase db = databaseHelper.getReadableDatabase();
-		try {
-			SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
-			queryBuilder.setTables(TABLE_NAME);
-
-			String[] projection = null; // list of columns, null:=all
-			String selection = null; // where clause excluding where, null:=all rows
-			String[] selectionArgs = null; // replaces ?s in selection
-			String groupBy = null; // SQL GROUP BY
-			String having = null; // SQL HAVING
-			String sortOrder = "_id"; // SQL ORDER BY
-
-			int count = 0;
-			Cursor cursor = queryBuilder.query(db, projection, selection, selectionArgs, groupBy, having, sortOrder);
-			try {
-				if (!cursor.moveToFirst())
-					return result;
-				int idIndex = cursor.getColumnIndex("_id");
-				int nameIndex = cursor.getColumnIndex("name");
-				int scoreIndex = cursor.getColumnIndex("score");
-				do {
-					String name = cursor.getString(nameIndex);
-					int score = cursor.getInt(scoreIndex);
-					count++;
-					if (count > MAX_ENTRIES) {
-						int id = cursor.getInt(idIndex);
-						db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE _id = " + id);
-					} else {
-						
-						HighScoreEntry entry = new HighScoreEntry();
-						entry.setScore(score);
-						entry.setName(name);
-						result.add(entry);
-					}
-				} while (cursor.moveToNext());
-
-				return result;
-			} finally {
-				cursor.close();
-			}
-		} finally {
-			db.close();
-		}
-	}
 }

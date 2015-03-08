@@ -5,7 +5,6 @@ import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import edu.dartmouth.cs.SleepDrunk.ReactHighScoreDatabase.HighScoreEntry;
 
 import android.app.Activity;
@@ -26,6 +25,12 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import java.util.Calendar;
+
+
+
+
+import java.util.Date;
 
 public class ReactView extends View {
 
@@ -50,6 +55,11 @@ public class ReactView extends View {
 	private Timer timer = new Timer(true);
 	private final Random random = new Random();
 	private long lastClick;
+
+
+
+    public static int lastUpdatedTimestamp = Calendar.getInstance().get(Calendar.SECOND);
+    public static double sleeptime = 0;
 
 	public ReactView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -202,6 +212,7 @@ public class ReactView extends View {
 		scoreEntry.setScore(avgTime);
 		scoreEntry.setBac(bac);
 		scoreEntry.setDrinks(drinks);
+        scoreEntry.setSleeptime(sleeptime);
 		
 			alert.setMessage("Name: "+name+"\n"+
 					"AvgTime: " + avgTime  + " ms.\n"+
