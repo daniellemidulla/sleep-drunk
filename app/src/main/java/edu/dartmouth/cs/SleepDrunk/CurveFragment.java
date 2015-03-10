@@ -291,6 +291,23 @@ public class CurveFragment extends Fragment {
         lines.add(line);
         //	}
 
+//        int userBaseline = ReactView.getUserBaseline();
+//        List<PointValue> baseline = new ArrayList<PointValue>();
+//        values.add(new PointValue(0, userBaseline));
+//        values.add(new PointValue(rxtime.size(), userBaseline));
+//
+//        Line uBaseLine = new Line(baseline);
+//        uBaseLine.setColor(ChartUtils.COLOR_BLUE);
+//        line.setShape(shape);
+//        line.setCubic(isCubic);
+//        line.setFilled(isFilled);
+//        line.setHasLabels(hasLabels);
+//        line.setHasLabelsOnlyForSelected(hasLabelForSelected);
+//        line.setHasLines(hasLines);
+//        line.setHasPoints(hasPoints);
+//        lines.add(uBaseLine);
+
+
         data = new LineChartData(lines);
 
         if (hasAxes) {

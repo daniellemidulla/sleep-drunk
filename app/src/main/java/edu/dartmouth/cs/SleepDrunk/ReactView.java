@@ -191,6 +191,8 @@ public class ReactView extends View {
 		} else {*/
         int rxnTime;
         //get reaction time deterioration
+        System.out.println("personalBaseline: " + personalBaseline);
+        System.out.println("avgTime: " + avgTime);
 		if (personalBaseline == 0) { //if there is no personal baseline
             rxnTime = avgTime - BASELINE; //use the hard-coded baseline
             if (ReactGameActivity.sleeptime >= 7){ //if they report more than 7 hours of sleep
@@ -206,7 +208,7 @@ public class ReactView extends View {
                 personalBaseline = avgTime; //reset the personal baseline
             }
         }
-
+        System.out.println("rxnTime: " + rxnTime);
 //        if (rxnTime < 0) rxnTime = 0;
 
         //NumberFormat formatter = new DecimalFormat("#0.00");
@@ -439,4 +441,9 @@ protected void onPostExecute(String res) {
 		}
 		return bodyWater;
 	}
+
+//    public static int getUserBaseline(){
+//        if (personalBaseline == 0) return BASELINE;
+//        else return personalBaseline;
+//    }
 }

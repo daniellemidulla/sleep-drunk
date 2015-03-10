@@ -105,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReactGameActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ReactGameActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactGameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46712804" vertical-offset="525" max-vertical-offset="1200">
+            <state vertical-scroll-proportion="-4.372549" vertical-offset="572" max-vertical-offset="1200">
               <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
               <folding>
                 <element signature="e#1926#1990#0" expanded="true" />
@@ -122,8 +122,8 @@
       <file leaf-file-name="CurveFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/CurveFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3641" max-vertical-offset="5445">
-              <caret line="282" column="44" selection-start-line="282" selection-start-column="44" selection-end-line="282" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3731" max-vertical-offset="5700">
+              <caret line="293" column="10" selection-start-line="293" selection-start-column="10" selection-end-line="307" selection-end-column="31" />
               <folding>
                 <element signature="e#8668#8677#0" expanded="true" />
                 <element signature="e#8723#8732#0" expanded="true" />
@@ -144,11 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReactView.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ReactView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-125.5" vertical-offset="2347" max-vertical-offset="6720">
-              <caret line="374" column="36" selection-start-line="374" selection-start-column="36" selection-end-line="374" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.7226107" vertical-offset="2840" max-vertical-offset="6825">
+              <caret line="210" column="48" selection-start-line="210" selection-start-column="48" selection-end-line="210" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2310#2407#0" expanded="true" />
@@ -157,12 +157,12 @@
                 <element signature="e#3081#3280#0" expanded="true" />
                 <element signature="e#3273#3274#0" expanded="true" />
                 <element signature="e#3286#3287#0" expanded="true" />
-                <element signature="e#9567#9613#0" expanded="true" />
-                <element signature="e#9701#9717#0" expanded="true" />
-                <element signature="e#10814#10858#0" expanded="true" />
-                <element signature="e#11095#11139#0" expanded="true" />
-                <element signature="e#11446#11489#0" expanded="true" />
-                <element signature="e#11678#11722#0" expanded="true" />
+                <element signature="e#9737#9783#0" expanded="true" />
+                <element signature="e#9871#9887#0" expanded="true" />
+                <element signature="e#10984#11028#0" expanded="true" />
+                <element signature="e#11265#11309#0" expanded="true" />
+                <element signature="e#11616#11659#0" expanded="true" />
+                <element signature="e#11848#11892#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -675,7 +675,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4277686527000" />
+        <entry key="$PROJECT_DIR$" value="4277695236000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -937,9 +937,9 @@
         <option value="$PROJECT_DIR$/app/build/generated/source/r/debug/edu/dartmouth/cs/SleepDrunk/R.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/CurveFragmentCopy.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_line_chart.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/CurveFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactGameActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/CurveFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactView.java" />
       </list>
     </option>
@@ -982,7 +982,6 @@
       <pane id="PackagesPane">
         <subPane />
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1193,6 +1192,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1206,6 +1206,7 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="047c9dc8437cd8cc" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
+    <property name="TODO_SCOPE" value="Project Files" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1445,13 +1446,13 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.49927953" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6075188" sideWeight="0.50072044" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25413534" sideWeight="0.50072044" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.50072044" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.49927953" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04962406" sideWeight="0.49927953" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25413534" sideWeight="0.49927953" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299712" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.49927953" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1557,12 +1558,12 @@
             <element signature="e#3081#3280#0" expanded="true" />
             <element signature="e#3273#3274#0" expanded="true" />
             <element signature="e#3286#3287#0" expanded="true" />
-            <element signature="e#9567#9613#0" expanded="true" />
-            <element signature="e#9701#9717#0" expanded="true" />
-            <element signature="e#10814#10858#0" expanded="true" />
-            <element signature="e#11095#11139#0" expanded="true" />
-            <element signature="e#11446#11489#0" expanded="true" />
-            <element signature="e#11678#11722#0" expanded="true" />
+            <element signature="e#9737#9783#0" expanded="true" />
+            <element signature="e#9871#9887#0" expanded="true" />
+            <element signature="e#10984#11028#0" expanded="true" />
+            <element signature="e#11265#11309#0" expanded="true" />
+            <element signature="e#11616#11659#0" expanded="true" />
+            <element signature="e#11848#11892#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1619,12 +1620,12 @@
             <element signature="e#3081#3280#0" expanded="true" />
             <element signature="e#3273#3274#0" expanded="true" />
             <element signature="e#3286#3287#0" expanded="true" />
-            <element signature="e#9567#9613#0" expanded="true" />
-            <element signature="e#9701#9717#0" expanded="true" />
-            <element signature="e#10814#10858#0" expanded="true" />
-            <element signature="e#11095#11139#0" expanded="true" />
-            <element signature="e#11446#11489#0" expanded="true" />
-            <element signature="e#11678#11722#0" expanded="true" />
+            <element signature="e#9737#9783#0" expanded="true" />
+            <element signature="e#9871#9887#0" expanded="true" />
+            <element signature="e#10984#11028#0" expanded="true" />
+            <element signature="e#11265#11309#0" expanded="true" />
+            <element signature="e#11616#11659#0" expanded="true" />
+            <element signature="e#11848#11892#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1681,12 +1682,12 @@
             <element signature="e#3081#3280#0" expanded="true" />
             <element signature="e#3273#3274#0" expanded="true" />
             <element signature="e#3286#3287#0" expanded="true" />
-            <element signature="e#9567#9613#0" expanded="true" />
-            <element signature="e#9701#9717#0" expanded="true" />
-            <element signature="e#10814#10858#0" expanded="true" />
-            <element signature="e#11095#11139#0" expanded="true" />
-            <element signature="e#11446#11489#0" expanded="true" />
-            <element signature="e#11678#11722#0" expanded="true" />
+            <element signature="e#9737#9783#0" expanded="true" />
+            <element signature="e#9871#9887#0" expanded="true" />
+            <element signature="e#10984#11028#0" expanded="true" />
+            <element signature="e#11265#11309#0" expanded="true" />
+            <element signature="e#11616#11659#0" expanded="true" />
+            <element signature="e#11848#11892#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1983,10 +1984,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.6" vertical-offset="0" max-vertical-offset="1185">
+          <caret line="31" column="89" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactGameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.372549" vertical-offset="572" max-vertical-offset="1200">
+          <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
+          <folding>
+            <element signature="e#1926#1990#0" expanded="true" />
+            <element signature="e#2144#2678#0" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/CurveFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3641" max-vertical-offset="5445">
-          <caret line="282" column="44" selection-start-line="282" selection-start-column="44" selection-end-line="282" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3731" max-vertical-offset="5700">
+          <caret line="293" column="10" selection-start-line="293" selection-start-column="10" selection-end-line="307" selection-end-column="31" />
           <folding>
             <element signature="e#8668#8677#0" expanded="true" />
             <element signature="e#8723#8732#0" expanded="true" />
@@ -1996,18 +2017,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.6" vertical-offset="0" max-vertical-offset="1185">
-          <caret line="31" column="89" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-125.5" vertical-offset="2347" max-vertical-offset="6720">
-          <caret line="374" column="36" selection-start-line="374" selection-start-column="36" selection-end-line="374" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.7226107" vertical-offset="2840" max-vertical-offset="6825">
+          <caret line="210" column="48" selection-start-line="210" selection-start-column="48" selection-end-line="210" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2310#2407#0" expanded="true" />
@@ -2016,24 +2029,12 @@
             <element signature="e#3081#3280#0" expanded="true" />
             <element signature="e#3273#3274#0" expanded="true" />
             <element signature="e#3286#3287#0" expanded="true" />
-            <element signature="e#9567#9613#0" expanded="true" />
-            <element signature="e#9701#9717#0" expanded="true" />
-            <element signature="e#10814#10858#0" expanded="true" />
-            <element signature="e#11095#11139#0" expanded="true" />
-            <element signature="e#11446#11489#0" expanded="true" />
-            <element signature="e#11678#11722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/dartmouth/cs/SleepDrunk/ReactGameActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46712804" vertical-offset="525" max-vertical-offset="1200">
-          <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
-          <folding>
-            <element signature="e#1926#1990#0" expanded="true" />
-            <element signature="e#2144#2678#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#9737#9783#0" expanded="true" />
+            <element signature="e#9871#9887#0" expanded="true" />
+            <element signature="e#10984#11028#0" expanded="true" />
+            <element signature="e#11265#11309#0" expanded="true" />
+            <element signature="e#11616#11659#0" expanded="true" />
+            <element signature="e#11848#11892#0" expanded="true" />
           </folding>
         </state>
       </provider>
