@@ -54,7 +54,7 @@ public class ReactView extends View {
 	private final Random random = new Random();
 	private long lastClick;
     private Context context;
-    private int personalBaseline = 0;
+    private static int personalBaseline = 0;
 
 
 
@@ -189,28 +189,29 @@ public class ReactView extends View {
 				}
 			});
 		} else {*/
-        int rxnTime;
+        int rxnTime = 0;
         //get reaction time deterioration
-        System.out.println("personalBaseline: " + personalBaseline);
-        System.out.println("avgTime: " + avgTime);
+        System.out.println("==============personalBaseline BEFORE: " + personalBaseline);
+        System.out.println("==============avgTime: " + avgTime);
+        System.out.println("==============baseline: "+ BASELINE);
 		if (personalBaseline == 0) { //if there is no personal baseline
             rxnTime = avgTime - BASELINE; //use the hard-coded baseline
-            if (ReactGameActivity.sleeptime >= 7){ //if they report more than 7 hours of sleep
+            System.out.println("rxnTime in if: " + rxnTime);
+            //if they report more than 7 hours of sleep or the current score is better than the baseline
+            if ((ReactGameActivity.sleeptime >= 7) || (avgTime < BASELINE) ){
                 personalBaseline = avgTime; //set the score as the new personal baseline
-            }
-            else if (avgTime < BASELINE){ //if the current score is better than the baseline
-                personalBaseline = avgTime; //set the current score as the new personal baseline
             }
         }
         else{ //if there is a personal baseline
             rxnTime = avgTime - personalBaseline; //use the personal baseline
+            System.out.println("rxnTime in else: " + rxnTime);
             if (avgTime < personalBaseline){ //if the score is faster than the personal baseline
                 personalBaseline = avgTime; //reset the personal baseline
             }
         }
-        System.out.println("rxnTime: " + rxnTime);
+        System.out.println("==============personalBaseline AFTER: " + personalBaseline);
 //        if (rxnTime < 0) rxnTime = 0;
-
+        System.out.println("rxnTime outside: " + rxnTime);
         //NumberFormat formatter = new DecimalFormat("#0.00");
 		double bac = reactionTimeToBAC(rxnTime);
 		//bac=((int)(bac*100))/100; 
