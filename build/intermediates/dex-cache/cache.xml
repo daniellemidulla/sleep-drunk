@@ -43,5 +43,12 @@
         sha1="607d961caf1a59b6e782724654c1f3229e036c20">
         <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/classes-b9af0c10e9e625902de297336ad57475bdb39aed.jar" />
     </item>
+    <item
+        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/exploded-aar/com.github.lecho/hellocharts-library/1.5.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="31feb61a81927b6f873d2eb562e12e2487199c01">
+        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/classes-92d21ce897465a0a633035f4e19dd5f698e7e0be.jar" />
+    </item>
 
 </items>

@@ -129,9 +129,9 @@ public class MainActivity2 extends Activity {
         ImageView rlIcon3 = new ImageView(this);
         ImageView rlIcon4 = new ImageView(this);
 
-        rlIcon1.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_chat_light));
-        rlIcon2.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_camera_light));
-        rlIcon3.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_video_light));
+        rlIcon1.setImageDrawable(getResources().getDrawable(R.drawable.home));
+        rlIcon2.setImageDrawable(getResources().getDrawable(R.drawable.setting));
+        rlIcon3.setImageDrawable(getResources().getDrawable(R.drawable.chart));
 
 
         SubActionButton btn1 = rLSubBuilder.setContentView(rlIcon1).build();

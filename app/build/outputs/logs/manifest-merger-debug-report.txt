@@ -23,6 +23,7 @@ uses-sdk
 ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:support-v4:20.0.0:16:5
 MERGED from com.oguzdev:CircularFloatingActionMenu:1.0.2:7:5
+MERGED from com.github.lecho:hellocharts-library:1.5.3:7:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:9:9
 		INJECTED from AndroidManifest.xml:0:0

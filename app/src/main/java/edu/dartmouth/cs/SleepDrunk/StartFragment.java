@@ -9,18 +9,25 @@ import java.util.Map;
 import java.util.List;
 
 
-
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.content.Context;
 import android.content.Intent;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Button;
+import android.widget.TextView;
 
 import edu.dartmouth.cs.SleepDrunk.R;
 import edu.dartmouth.cs.SleepDrunk.ReactHighScoreDatabase.HighScoreEntry;
@@ -29,11 +36,17 @@ public class StartFragment extends Fragment {
 	private Context mContext;
 	private Spinner inputType;
 	private Spinner activityType;
-	private Button btnStart;
+	private ImageButton btnStart;
 	private Button btnSync;
 	private Intent intent;
+    private EditText rxtime;
+    private EditText cups;
+    private EditText username;
+    private LinearLayout welcome;
+    private LinearLayout report;
 	private ReactHighScoreDatabase db;
-	private HighScoreEntry entry;
+	public static HighScoreEntry entry = null;
+
 
 	
 
@@ -46,11 +59,35 @@ public class StartFragment extends Fragment {
 		//activityType = (Spinner) view.findViewById(R.id.spinnerActivityType);
 		//inputType = (Spinner) view.findViewById(R.id.spinnerInputType);
 
-		btnStart = (Button) view.findViewById(R.id.btnStart);
-		btnSync = (Button) view.findViewById(R.id.btnSync);
+		btnStart = (ImageButton) view.findViewById(R.id.btnStart);
+        rxtime = (EditText)view.findViewById(R.id.rxtime);
+        cups = (EditText)view.findViewById(R.id.cups);
+        username = (EditText)view.findViewById(R.id.username);
+        report = (LinearLayout)view.findViewById(R.id.report);
+        welcome = (LinearLayout)view.findViewById(R.id.welcome);
+		//btnSync = (Button) view.findViewById(R.id.btnSync);
 		db =  ReactHighScoreDatabase.getDatabase(getActivity());
 
-		
+
+
+
+
+        String name = PreferenceManager.getDefaultSharedPreferences(getActivity())
+                .getString("name_preference", "");
+        if(name == null || name.equals("") || name.isEmpty()){
+            welcome.setVisibility(View.VISIBLE);
+        }
+
+        if(entry != null && entry.getName() != null){
+            welcome.setVisibility(View.GONE);
+            report.setVisibility(View.VISIBLE);
+            report.setBackgroundColor(Color.parseColor(getString(R.string.lightyellow)));
+            rxtime.setText(String.valueOf(entry.getScore()));
+            cups.setText(String.valueOf(entry.getDrinks()));
+            username.setText(entry.getName());
+
+        }
+
 		
 		
 		intent = new Intent();
@@ -74,7 +111,7 @@ public class StartFragment extends Fragment {
 
 			}
 		});
-		btnSync.setOnClickListener(new View.OnClickListener() {
+		/*btnSync.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 											
 				List<HighScoreEntry>entries = db.getAllEntries();
@@ -111,6 +148,7 @@ public class StartFragment extends Fragment {
 
 			}
 		});
+		*/
 	   return view;	
 	}
 	
@@ -142,10 +180,5 @@ public class StartFragment extends Fragment {
 
 		}.execute(data);
 	}
-				
-			
-
-	
-	
 
 }

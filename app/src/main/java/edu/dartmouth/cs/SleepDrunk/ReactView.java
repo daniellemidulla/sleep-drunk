@@ -1,7 +1,6 @@
 package edu.dartmouth.cs.SleepDrunk;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -10,27 +9,25 @@ import edu.dartmouth.cs.SleepDrunk.ReactHighScoreDatabase.HighScoreEntry;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.preference.PreferenceManager;
-import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
+
 import java.util.Calendar;
-
-
-
-
-import java.util.Date;
+import java.util.List;
+import org.json.JSONObject;
+import org.json.JSONArray;
+import android.os.AsyncTask;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ReactView extends View {
 
@@ -38,6 +35,7 @@ public class ReactView extends View {
 	private static final int STATE_WAITING = 2;
 	private static final int STATE_RED = 3;
 	private static final int STATE_AFTER_CHEAT = 4;
+
 
 	public static final int NUMBER_OF_CLICKS = 2;
 	
@@ -55,14 +53,21 @@ public class ReactView extends View {
 	private Timer timer = new Timer(true);
 	private final Random random = new Random();
 	private long lastClick;
+    private Context context;
+    private int personalBaseline = 0;
 
 
 
     public static int lastUpdatedTimestamp = Calendar.getInstance().get(Calendar.SECOND);
     public static double sleeptime = 0;
 
+    public   ReactHighScoreDatabase db = ReactHighScoreDatabase.getDatabase(getContext());
+
+    public  HighScoreEntry scoreEntry = db.new HighScoreEntry();
+
 	public ReactView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+        this.context = context;
 
 		setOnClickListener(new OnClickListener() {
 			@Override
@@ -71,7 +76,7 @@ public class ReactView extends View {
 			}
 		});
 
-		textPaint.setColor(Color.WHITE);
+		textPaint.setColor(Color.BLACK);
 		textPaint.setAntiAlias(true);
 		textPaint.setTextAlign(Align.CENTER);
 
@@ -87,7 +92,7 @@ public class ReactView extends View {
 			textSize = 30;
 		}
 
-		textPaint.setTextSize(textSize*2);
+		textPaint.setTextSize(textSize*3);
 		begin();
 	}
 
@@ -165,9 +170,8 @@ public class ReactView extends View {
 
 	private void gameOver() {
 		final int avgTime = totalTime / NUMBER_OF_CLICKS;
-		restart();
-
-		final ReactHighScoreDatabase db = ReactHighScoreDatabase.getDatabase(getContext());
+		//restart();
+        state = STATE_WAITING;
 		//int position = db.getPositionForScore(totalTimeCopy);
 
 		final String LAST_NAME_KEY = "last_name";
@@ -185,9 +189,27 @@ public class ReactView extends View {
 				}
 			});
 		} else {*/
-		
-		int rxnTime = avgTime - BASELINE;
-		//NumberFormat formatter = new DecimalFormat("#0.00");
+        int rxnTime;
+        //get reaction time deterioration
+		if (personalBaseline == 0) { //if there is no personal baseline
+            rxnTime = avgTime - BASELINE; //use the hard-coded baseline
+            if (ReactGameActivity.sleeptime >= 7){ //if they report more than 7 hours of sleep
+                personalBaseline = avgTime; //set the score as the new personal baseline
+            }
+            else if (avgTime < BASELINE){ //if the current score is better than the baseline
+                personalBaseline = avgTime; //set the current score as the new personal baseline
+            }
+        }
+        else{ //if there is a personal baseline
+            rxnTime = avgTime - personalBaseline; //use the personal baseline
+            if (avgTime < personalBaseline){ //if the score is faster than the personal baseline
+                personalBaseline = avgTime; //reset the personal baseline
+            }
+        }
+
+//        if (rxnTime < 0) rxnTime = 0;
+
+        //NumberFormat formatter = new DecimalFormat("#0.00");
 		double bac = reactionTimeToBAC(rxnTime);
 		//bac=((int)(bac*100))/100; 
 		String bacStr = new DecimalFormat("#.##").format(bac);
@@ -203,18 +225,68 @@ public class ReactView extends View {
 		}
 		
 		int weight = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(getContext())
-				.getString("weight_preference", "50"));
+				.getString("weight_preference", "0"));
 		
 		
 		int drinks = BACToDrinks(bac, weight, gender);
-		final HighScoreEntry scoreEntry = db.new HighScoreEntry();
+
 		scoreEntry.setName(name);
 		scoreEntry.setScore(avgTime);
 		scoreEntry.setBac(bac);
 		scoreEntry.setDrinks(drinks);
-        scoreEntry.setSleeptime(sleeptime);
-		
-			alert.setMessage("Name: "+name+"\n"+
+        scoreEntry.setSleeptime(ReactGameActivity.sleeptime);
+        db.addEntry(scoreEntry);
+
+
+        Intent intent = new Intent();
+        StartFragment.entry = db.new HighScoreEntry();
+        StartFragment.entry.setName(name);
+        StartFragment.entry.setScore(avgTime);
+        StartFragment.entry.setBac(bac);
+        StartFragment.entry.setDrinks(drinks);
+        StartFragment.entry.setSleeptime(sleeptime);
+
+
+        List<HighScoreEntry>entries = db.getAllEntries();
+        JSONArray array = new JSONArray();
+        JSONObject jsonData = new JSONObject();
+
+
+
+        try{
+
+            jsonData.put(MainActivity2.PROPERTY_REG_ID, MainActivity2.regid);
+
+
+            for(HighScoreEntry entry:entries){
+                JSONObject obj = new JSONObject();
+                //obj.put(MainActivity.PROPERTY_REG_ID, MainActivity.regid);
+                obj.put("id", entry.getId());
+                obj.put("name", entry.getName());
+                obj.put("score", entry.getScore());
+                obj.put("bac", entry.getBac());
+                obj.put("drinks", entry.getDrinks());
+                obj.put("sleeptime", entry.getSleeptime());
+
+
+                array.put(obj);
+            }
+            jsonData.put("array", array);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        String out = jsonData.toString();
+        syncExercise(out);
+
+
+
+
+        intent.setClass(getContext(), MainActivity2.class);
+
+        getContext().startActivity(intent);
+
+			/*alert.setMessage("Name: "+name+"\n"+
 					"AvgTime: " + avgTime  + " ms.\n"+
 					"BAC: " + bacStr  + " \n"+
 					"Drinks: " + drinks  + " \n"
@@ -222,7 +294,7 @@ public class ReactView extends View {
 			alert.setCancelable(true);
 			alert.setPositiveButton("Save", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {					
-					db.addEntry(scoreEntry);
+
 					
 					Intent intent = new Intent();
 					intent.setClass(getContext(), MainActivity2.class);
@@ -240,7 +312,37 @@ public class ReactView extends View {
 		
 
 		alert.show();
+		*/
 	}
+
+
+private void syncExercise(String data) {
+        new AsyncTask<String, Void, String>() {
+
+@Override
+protected String doInBackground(String... arg0) {
+        String url = getResources().getString(R.string.server_addr) + "/sync.do";
+        String res = "";
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("data", arg0[0]);
+        try {
+        res = ServerUtilities.post(url, params,"application/json");
+        } catch (Exception ex) {
+        ex.printStackTrace();
+        }
+
+        return res;
+        }
+
+@Override
+protected void onPostExecute(String res) {
+        //mPostText.setText("");
+        //refreshPostHistory();
+        }
+
+        }.execute(data);
+
+        }
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
@@ -263,29 +365,31 @@ public class ReactView extends View {
 
 	}
 
+
 	@Override
 	public void draw(Canvas canvas) {
 		switch (state) {
 		case STATE_START:
-			canvas.drawColor(Color.BLACK);
-			drawCenteredText(canvas, "Touch the screen", "as quick as possible",
-					"when the screen turns red.", "", "Touch screen to START!");
+
+			canvas.drawColor(Color.parseColor(getResources().getString(R.string.lightblue)));
+            textPaint.setTextSize(72);
+			drawCenteredText(canvas, "Touch the screen","as quickly as possible","when it turns green.","","Touch screen to START!");
 			break;
 		case STATE_WAITING:
-			canvas.drawColor(Color.BLACK);
+			canvas.drawColor(Color.parseColor(getResources().getString(R.string.lightblue)));
 			String lastString = (clicks == 0) ? "" : "Last: " + lastTime + " ms";
 			drawCenteredText(canvas, "Reactions: " + clicks + "/" + NUMBER_OF_CLICKS, "", "Average: "
 					+ (clicks == 0 ? 0 : totalTime / clicks) + " ms", "", lastString);
 			break;
 		case STATE_RED:
-			canvas.drawColor(Color.RED);
-			drawCenteredText(canvas, "React!");
+			canvas.drawColor(Color.parseColor(getResources().getString(R.string.lightred)));
+			drawCenteredText(canvas, "Tap!");
 			if (startTime == -1) {
 				startTime = System.currentTimeMillis();
 			}
 			break;
 		case STATE_AFTER_CHEAT:
-			canvas.drawColor(Color.BLACK);
+			canvas.drawColor(Color.parseColor(getResources().getString(R.string.lightblue)));
 			drawCenteredText(canvas, "Head start!", "", "Touch to continue.");
 			break;
 
@@ -293,28 +397,30 @@ public class ReactView extends View {
 	}
 
 	/**
-	 * 
+	 * Calculates the average equivalent blood alcohol concentration (BAC) based on the given reaction time deterioration
 	 * @param rxnTimeDiff The difference in reaction times between the current score and the baseline in milliseconds
-	 * @return Returns a BAC value in % (g/100mL) (the standard BAC value) 
+	 * @return Returns a BAC value in % (g/100mL) (the standard unit to represent BAC ) with a lower bound at 0
 	 */
 	public double reactionTimeToBAC( double rxnTimeDiff ){
+        if ( rxnTimeDiff < 2.4 ) return 0; //ensures that the BAC won't be negative
 		double calculatedBAC;
 		calculatedBAC = 0.0269 * Math.log(rxnTimeDiff) - 0.0225;
 		return calculatedBAC;
 	}
 	
 	/**
-	 * 
+	 * Calculates the average equivalent number of drinks for the input BAC and a person of the given gender and weight
 	 * @param calculatedBAC The BAC value calculated in % (g/100ml)
 	 * @param weight The user's weight in kilograms
 	 * @param gender The user's gender as an integer - 0 for not set, 1 for male, 2 for female
-	 * @return Returns the number of drinks ingested based on the given BAC, weight, and gender
+	 * @return Returns the number of drinks ingested based on the given BAC, weight, and gender with a lower limit at 0
 	 */
 	public int BACToDrinks( double calculatedBAC, double weight, int gender){
 		int numberOfDrinks = 0;
 		double bodyWater = getBodyWaterConstant(gender);
 		double drinks = ((calculatedBAC + METABOLISM_CONSTANT)*bodyWater*weight)/(WATER_IN_BLOOD * CONVERSION_FACTOR);
 		numberOfDrinks = (int) drinks;
+        if (numberOfDrinks < 0) return 0;
 		return numberOfDrinks;
 	}
 	
