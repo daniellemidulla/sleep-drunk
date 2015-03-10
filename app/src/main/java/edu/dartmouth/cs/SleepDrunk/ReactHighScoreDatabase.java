@@ -125,7 +125,7 @@ public class ReactHighScoreDatabase {
 		SQLiteDatabase db = databaseHelper.getWritableDatabase();
 		try {
 			long insertid = db.insert(TABLE_NAME, null, values);
-			System.out.println(insertid);
+			//System.out.println(insertid);
 		} finally {
 			db.close();
 		}
@@ -145,7 +145,7 @@ public class ReactHighScoreDatabase {
 		db.delete(TABLE_NAME, 
 				" _id = " +entry.getId(), null);
 		List<HighScoreEntry> list = getAllEntries();
-		System.out.println();
+		//System.out.println();
 	}
 	
 	public HighScoreEntry getEntry(int _id) {

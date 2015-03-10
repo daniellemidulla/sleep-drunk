@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text=", Your Recent RxTime is"
+            android:text=", your last reaction time was"
             >
            </TextView>
 
@@ -164,12 +164,20 @@
             android:background="#00000000">
            </EditText>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="ms"
+                >
+            </TextView>
+
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="equals to" >
+            android:text="which equals" >
         </TextView>
 
         <LinearLayout
@@ -207,4 +215,4 @@
 
     </LinearLayout>
 
-</LinearLayout><!-- From: file:/Users/xiaohong/Desktop/SleepDrunk3/app/src/main/res/layout/startfragment.xml -->
+</LinearLayout><!-- From: file:/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/src/main/res/layout/startfragment.xml -->

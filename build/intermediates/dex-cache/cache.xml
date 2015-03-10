@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/libs/google-play-services.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7676c0cb230efa6ac41c47867d372ed5913029d4">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/google-play-services-771b6256bf9332d9bd3a7afa8e794a8242908553.jar" />
-    </item>
-    <item
-        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/classes-7e0d60705ea7cea5ff397ca60a9462fc48a25f26.jar" />
-    </item>
-    <item
-        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jar="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-7fff98bc4d715314eb7ba186ebb8bf35f70ade9c.jar" />
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-6a0415398d31398a0b8ae96867074085e6977ae2.jar" />
     </item>
     <item
-        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/libs/androidplot-core-0.6.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/androidplot-core-0.6.1-45e0242dddc174dcaa3fa066ef6b7dd3a7faf28e.jar" />
-    </item>
-    <item
-        jar="/Users/xiaohong/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-035c25648067f7ee066b6b0f19a4874afb6d8d01.jar" />
-    </item>
-    <item
-        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/exploded-aar/com.oguzdev/CircularFloatingActionMenu/1.0.2/classes.jar"
+        jar="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/exploded-aar/com.oguzdev/CircularFloatingActionMenu/1.0.2/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="607d961caf1a59b6e782724654c1f3229e036c20">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/classes-b9af0c10e9e625902de297336ad57475bdb39aed.jar" />
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/classes-36780797bd801eaa2891d8c624b5e923fd8dd4c0.jar" />
     </item>
     <item
-        jar="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/exploded-aar/com.github.lecho/hellocharts-library/1.5.3/classes.jar"
+        jar="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/libs/google-play-services.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7676c0cb230efa6ac41c47867d372ed5913029d4">
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/google-play-services-454340c0bb16a1f05d35619acf04f4070d002079.jar" />
+    </item>
+    <item
+        jar="/Users/Danielle/android-sdks/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-ff9f4511a6a8b1afd5252d400cb2a05687e58b9e.jar" />
+    </item>
+    <item
+        jar="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/exploded-aar/com.github.lecho/hellocharts-library/1.5.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="31feb61a81927b6f873d2eb562e12e2487199c01">
-        <dex dex="/Users/xiaohong/Desktop/SleepDrunk3/app/build/intermediates/pre-dexed/debug/classes-92d21ce897465a0a633035f4e19dd5f698e7e0be.jar" />
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/classes-c7fed1eeb5f37f0c578df56b572b3a2441961305.jar" />
+    </item>
+    <item
+        jar="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/classes-535d6e420b1fce714af77d7cf36568ce1b33a578.jar" />
+    </item>
+    <item
+        jar="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/libs/androidplot-core-0.6.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
+        <dex dex="/Users/Danielle/AndroidStudioProjects/sleep-drunk2/app/build/intermediates/pre-dexed/debug/androidplot-core-0.6.1-b5318014b01b94d3f311cf5ab299555dd2f709ac.jar" />
     </item>
 
 </items>

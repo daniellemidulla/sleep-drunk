@@ -315,7 +315,7 @@ public class CurveFragment extends Fragment {
             Axis axisY = new Axis().setHasLines(true);
             if (hasAxesNames) {
                 axisX.setName("");
-                axisY.setName("React Time");
+                axisY.setName("Reaction Time (in ms)");
             }
             data.setAxisXBottom(axisX);
             data.setAxisYLeft(axisY);
