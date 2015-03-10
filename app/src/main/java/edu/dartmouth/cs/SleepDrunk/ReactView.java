@@ -192,26 +192,24 @@ public class ReactView extends View {
         int rxnTime = 0;
         //get reaction time deterioration
         System.out.println("==============personalBaseline BEFORE: " + personalBaseline);
-        System.out.println("==============avgTime: " + avgTime);
-        System.out.println("==============baseline: "+ BASELINE);
+        //System.out.println("==============avgTime: " + avgTime);
+        //System.out.println("==============baseline: "+ BASELINE);
+        //System.out.println("==============sleeptime: " + ReactGameActivity.sleeptime);
 		if (personalBaseline == 0) { //if there is no personal baseline
             rxnTime = avgTime - BASELINE; //use the hard-coded baseline
-            System.out.println("rxnTime in if: " + rxnTime);
-            //if they report more than 7 hours of sleep or the current score is better than the baseline
-            if ((ReactGameActivity.sleeptime >= 7) || (avgTime < BASELINE) ){
+            //if they reported more than 7 hours of sleep or the current score is better than the baseline
+            if ((ReactGameActivity.sleeptime >= 7) || (avgTime <= BASELINE) ){
                 personalBaseline = avgTime; //set the score as the new personal baseline
             }
         }
         else{ //if there is a personal baseline
             rxnTime = avgTime - personalBaseline; //use the personal baseline
-            System.out.println("rxnTime in else: " + rxnTime);
             if (avgTime < personalBaseline){ //if the score is faster than the personal baseline
                 personalBaseline = avgTime; //reset the personal baseline
             }
         }
         System.out.println("==============personalBaseline AFTER: " + personalBaseline);
-//        if (rxnTime < 0) rxnTime = 0;
-        System.out.println("rxnTime outside: " + rxnTime);
+        //System.out.println("rxnTime outside: " + rxnTime);
         //NumberFormat formatter = new DecimalFormat("#0.00");
 		double bac = reactionTimeToBAC(rxnTime);
 		//bac=((int)(bac*100))/100; 
@@ -406,8 +404,7 @@ protected void onPostExecute(String res) {
 	 */
 	public double reactionTimeToBAC( double rxnTimeDiff ){
         if ( rxnTimeDiff < 2.4 ) return 0; //ensures that the BAC won't be negative
-		double calculatedBAC;
-		calculatedBAC = 0.0269 * Math.log(rxnTimeDiff) - 0.0225;
+		double calculatedBAC = 0.0269 * Math.log(rxnTimeDiff) - 0.0225;
 		return calculatedBAC;
 	}
 	
@@ -419,10 +416,10 @@ protected void onPostExecute(String res) {
 	 * @return Returns the number of drinks ingested based on the given BAC, weight, and gender with a lower limit at 0
 	 */
 	public int BACToDrinks( double calculatedBAC, double weight, int gender){
-		int numberOfDrinks = 0;
+        if (calculatedBAC == 0) return 0;
 		double bodyWater = getBodyWaterConstant(gender);
 		double drinks = ((calculatedBAC + METABOLISM_CONSTANT)*bodyWater*weight)/(WATER_IN_BLOOD * CONVERSION_FACTOR);
-		numberOfDrinks = (int) drinks;
+        int numberOfDrinks = (int) drinks;
         if (numberOfDrinks < 0) return 0;
 		return numberOfDrinks;
 	}
@@ -433,7 +430,7 @@ protected void onPostExecute(String res) {
 	 * @return Returns the body water constant associated with the gender. If the given gender is not set(0), then the returned constant is for men.
 	 */
 	public double getBodyWaterConstant(int gender){
-		double bodyWater;
+		double bodyWater = 0;
 		if (gender == 2) { //if they are a woman
 			bodyWater = 0.49;
 		}
